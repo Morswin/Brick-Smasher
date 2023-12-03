@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://dbb48vxjrl16r"]
+[gd_scene load_steps=2 format=3 uid="uid://dbb48vxjrl16r"]
+
+[ext_resource type="PackedScene" uid="uid://cpkvgqw024kep" path="res://deflector/deflector.tscn" id="1_t2grt"]
 
 [node name="game loop" type="Node2D"]
+
+[node name="deflector" parent="." instance=ExtResource("1_t2grt")]
+position = Vector2(582, 623)
