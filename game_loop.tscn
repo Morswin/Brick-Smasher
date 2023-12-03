@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbb48vxjrl16r"]
+[gd_scene load_steps=3 format=3 uid="uid://dbb48vxjrl16r"]
 
 [ext_resource type="PackedScene" uid="uid://cpkvgqw024kep" path="res://deflector/deflector.tscn" id="1_t2grt"]
+[ext_resource type="PackedScene" uid="uid://jdpoenn4h3sd" path="res://ball/ball.tscn" id="2_8mk78"]
 
 [node name="game loop" type="Node2D"]
 
 [node name="deflector" parent="." instance=ExtResource("1_t2grt")]
 position = Vector2(582, 623)
+
+[node name="balls" type="Node2D" parent="."]
+
+[node name="ball" parent="balls" instance=ExtResource("2_8mk78")]
+position = Vector2(580, 592)

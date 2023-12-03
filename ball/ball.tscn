@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://jdpoenn4h3sd"]
+
+[ext_resource type="Script" path="res://ball/ball.gd" id="1_kmj2b"]
+[ext_resource type="Texture2D" uid="uid://cya5wlt7hhbts" path="res://graphics/balls/defaul_ball.png" id="2_2nhk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov02a"]
+size = Vector2(16, 16)
+
+[node name="ball" type="RigidBody2D"]
+script = ExtResource("1_kmj2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ov02a")
+
+[node name="DefaulBall" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_2nhk2")
