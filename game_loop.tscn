@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbb48vxjrl16r"]
+[gd_scene load_steps=5 format=3 uid="uid://dbb48vxjrl16r"]
 
 [ext_resource type="PackedScene" uid="uid://cpkvgqw024kep" path="res://deflector/deflector.tscn" id="1_t2grt"]
 [ext_resource type="PackedScene" uid="uid://jdpoenn4h3sd" path="res://ball/ball.tscn" id="2_8mk78"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wscy4"]
+size = Vector2(20, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yuog"]
+size = Vector2(1152, 20)
 
 [node name="game loop" type="Node2D"]
 
@@ -12,3 +18,23 @@ position = Vector2(582, 623)
 
 [node name="ball" parent="balls" instance=ExtResource("2_8mk78")]
 position = Vector2(580, 592)
+
+[node name="edges" type="Node2D" parent="."]
+
+[node name="left edge" type="StaticBody2D" parent="edges"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="edges/left edge"]
+position = Vector2(-10, 324)
+shape = SubResource("RectangleShape2D_wscy4")
+
+[node name="right edge" type="StaticBody2D" parent="edges"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="edges/right edge"]
+position = Vector2(1162, 324)
+shape = SubResource("RectangleShape2D_wscy4")
+
+[node name="top edge" type="StaticBody2D" parent="edges"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="edges/top edge"]
+position = Vector2(576, -10)
+shape = SubResource("RectangleShape2D_7yuog")
