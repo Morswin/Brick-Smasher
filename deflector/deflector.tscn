@@ -18,10 +18,13 @@ texture = ExtResource("1_n0no5")
 shape = SubResource("RectangleShape2D_aqmjn")
 
 [node name="LeftMarker" type="Marker2D" parent="."]
-position = Vector2(-32, -4)
+position = Vector2(-64, -8)
 
 [node name="CenterMarker" type="Marker2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, -8)
 
 [node name="RightMarker" type="Marker2D" parent="."]
-position = Vector2(32, -4)
+position = Vector2(64, -8)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -20)
