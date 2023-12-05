@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbb48vxjrl16r"]
+[gd_scene load_steps=4 format=3 uid="uid://dbb48vxjrl16r"]
 
 [ext_resource type="PackedScene" uid="uid://cpkvgqw024kep" path="res://deflector/deflector.tscn" id="1_t2grt"]
 [ext_resource type="PackedScene" uid="uid://jdpoenn4h3sd" path="res://ball/ball.tscn" id="2_8mk78"]
 [ext_resource type="PackedScene" uid="uid://bh8spe44886s6" path="res://edge/edge.tscn" id="3_q17ps"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wscy4"]
-size = Vector2(20, 648)
 
 [node name="game loop" type="Node2D"]
 
@@ -18,18 +15,6 @@ position = Vector2(582, 623)
 position = Vector2(601, 73)
 
 [node name="edges" type="Node2D" parent="."]
-
-[node name="left edge" type="StaticBody2D" parent="edges"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="edges/left edge"]
-position = Vector2(-10, 324)
-shape = SubResource("RectangleShape2D_wscy4")
-
-[node name="right edge" type="StaticBody2D" parent="edges"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="edges/right edge"]
-position = Vector2(1162, 324)
-shape = SubResource("RectangleShape2D_wscy4")
 
 [node name="edge top" type="Node2D" parent="edges"]
 
@@ -140,3 +125,127 @@ position = Vector2(1104, 16)
 
 [node name="edge36" parent="edges/edge top" instance=ExtResource("3_q17ps")]
 position = Vector2(1136, 16)
+
+[node name="edge left" type="Node2D" parent="edges"]
+
+[node name="edge37" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 48)
+
+[node name="edge38" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 80)
+
+[node name="edge39" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 112)
+
+[node name="edge40" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 144)
+
+[node name="edge41" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 176)
+
+[node name="edge42" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 208)
+
+[node name="edge43" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 240)
+
+[node name="edge44" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 272)
+
+[node name="edge45" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 304)
+
+[node name="edge46" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 336)
+
+[node name="edge47" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 368)
+
+[node name="edge48" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 400)
+
+[node name="edge49" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 432)
+
+[node name="edge50" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 464)
+
+[node name="edge51" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 496)
+
+[node name="edge52" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 528)
+
+[node name="edge53" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 560)
+
+[node name="edge54" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 592)
+
+[node name="edge55" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 624)
+
+[node name="edge56" parent="edges/edge left" instance=ExtResource("3_q17ps")]
+position = Vector2(16, 656)
+
+[node name="edge right" type="Node2D" parent="edges"]
+
+[node name="edge37" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 48)
+
+[node name="edge38" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 80)
+
+[node name="edge39" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 112)
+
+[node name="edge40" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 144)
+
+[node name="edge41" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 176)
+
+[node name="edge42" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 208)
+
+[node name="edge43" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 240)
+
+[node name="edge44" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 272)
+
+[node name="edge45" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 304)
+
+[node name="edge46" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 336)
+
+[node name="edge47" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 368)
+
+[node name="edge48" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 400)
+
+[node name="edge49" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 432)
+
+[node name="edge50" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 464)
+
+[node name="edge51" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 496)
+
+[node name="edge52" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 528)
+
+[node name="edge53" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 560)
+
+[node name="edge54" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 592)
+
+[node name="edge55" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 624)
+
+[node name="edge56" parent="edges/edge right" instance=ExtResource("3_q17ps")]
+position = Vector2(1136, 656)
