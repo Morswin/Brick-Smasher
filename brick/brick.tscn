@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxdioxecoupv5"]
+
+[ext_resource type="Texture2D" uid="uid://dg6eqq03xc8rv" path="res://graphics/bricks/red_brick.png" id="1_f4f57"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkdml"]
+size = Vector2(64, 32)
+
+[node name="brick" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qkdml")
+
+[node name="RedBrick" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_f4f57")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbb48vxjrl16r"]
+[gd_scene load_steps=5 format=3 uid="uid://dbb48vxjrl16r"]
 
 [ext_resource type="PackedScene" uid="uid://cpkvgqw024kep" path="res://deflector/deflector.tscn" id="1_t2grt"]
 [ext_resource type="PackedScene" uid="uid://jdpoenn4h3sd" path="res://ball/ball.tscn" id="2_8mk78"]
 [ext_resource type="PackedScene" uid="uid://bh8spe44886s6" path="res://edge/edge.tscn" id="3_q17ps"]
+[ext_resource type="PackedScene" uid="uid://bxdioxecoupv5" path="res://brick/brick.tscn" id="4_x0iog"]
 
 [node name="game loop" type="Node2D"]
 
@@ -249,3 +250,8 @@ position = Vector2(1136, 624)
 
 [node name="edge56" parent="edges/edge right" instance=ExtResource("3_q17ps")]
 position = Vector2(1136, 656)
+
+[node name="bricks" type="Node2D" parent="."]
+
+[node name="brick" parent="bricks" instance=ExtResource("4_x0iog")]
+position = Vector2(751, 158)
