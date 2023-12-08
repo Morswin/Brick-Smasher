@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxdioxecoupv5"]
+[gd_scene load_steps=4 format=3 uid="uid://bxdioxecoupv5"]
 
 [ext_resource type="Texture2D" uid="uid://dg6eqq03xc8rv" path="res://graphics/bricks/red_brick.png" id="1_f4f57"]
+[ext_resource type="Script" path="res://brick/brick.gd" id="1_grcjl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkdml"]
 size = Vector2(64, 32)
 
-[node name="brick" type="CharacterBody2D"]
+[node name="brick" type="Area2D"]
+script = ExtResource("1_grcjl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qkdml")
@@ -14,3 +16,5 @@ shape = SubResource("RectangleShape2D_qkdml")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("1_f4f57")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

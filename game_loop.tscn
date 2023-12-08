@@ -13,7 +13,8 @@ position = Vector2(582, 623)
 [node name="balls" type="Node2D" parent="."]
 
 [node name="ball" parent="balls" instance=ExtResource("2_8mk78")]
-position = Vector2(601, 73)
+position = Vector2(812, 161)
+direction = Vector2(-1, 0)
 
 [node name="edges" type="Node2D" parent="."]
 
