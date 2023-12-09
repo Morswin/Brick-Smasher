@@ -2,20 +2,7 @@ extends CharacterBody2D
 class_name Deflector
 
 
-enum hloding_ball {
-	holding,
-	not_holding,
-	game_just_started
-}
-
-
 const SPEED = 300.0
-
-var holding_ball_state := hloding_ball.game_just_started
-
-
-func _ready():
-	pass
 
 
 func _physics_process(_delta):

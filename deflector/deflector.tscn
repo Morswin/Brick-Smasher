@@ -26,5 +26,5 @@ position = Vector2(0, -8)
 [node name="RightMarker" type="Marker2D" parent="."]
 position = Vector2(64, -8)
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="BallHolder" type="Marker2D" parent="."]
 position = Vector2(0, -20)

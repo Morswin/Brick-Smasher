@@ -4,7 +4,18 @@ class_name Ball
 
 const SPEED = 150
 
-@export var direction = Vector2(0, 1)
+var ID: int
+
+@export var direction := Vector2(0, 1)
+@export var attached := false  # Is this ball attached to the deflector?
+
+
+func _init(_ID: int, _attached: bool = false):
+	ID = _ID
+	attached = _attached
+	#position = Vector2(64, 64)
+	#print("New instance")
+	#print(position)
 
 
 func _ready():
@@ -12,13 +23,16 @@ func _ready():
 
 
 func _physics_process(_delta):
-	if is_on_ceiling():
-		direction.y = direction.y * -1
-	if is_on_wall():
-		direction.x = direction.x * -1
-	if is_on_floor():
-		direction.y = direction.y * -1
-	velocity = direction * SPEED 
+	if attached:
+		pass
+	else:
+		if is_on_ceiling():
+			direction.y = direction.y * -1
+		if is_on_wall():
+			direction.x = direction.x * -1
+		if is_on_floor():
+			direction.y = direction.y * -1
+		velocity = direction * SPEED 
 	move_and_slide()
 
 
