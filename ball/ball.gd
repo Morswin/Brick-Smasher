@@ -6,16 +6,8 @@ const SPEED = 150
 
 var ID: int
 
-@export var direction := Vector2(0, 1)
+@export var direction := Vector2(1, -1)
 @export var attached := false  # Is this ball attached to the deflector?
-
-
-#func _init(_ID: int, _attached: bool = false):
-	#ID = _ID
-	#attached = _attached
-	#position = Vector2(64, 64)
-	#print("New instance")
-	#print(position)
 
 
 func _ready():
@@ -25,6 +17,8 @@ func _ready():
 func _physics_process(_delta):
 	if attached:
 		position = get_parent().deflector.ball_holder.global_position
+		if Input.is_action_just_pressed("ui_accept"):
+			attached = false
 	else:
 		if is_on_ceiling():
 			direction.y = direction.y * -1
