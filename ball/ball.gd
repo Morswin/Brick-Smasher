@@ -10,9 +10,9 @@ var ID: int
 @export var attached := false  # Is this ball attached to the deflector?
 
 
-func _init(_ID: int, _attached: bool = false):
-	ID = _ID
-	attached = _attached
+#func _init(_ID: int, _attached: bool = false):
+	#ID = _ID
+	#attached = _attached
 	#position = Vector2(64, 64)
 	#print("New instance")
 	#print(position)

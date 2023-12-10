@@ -1,17 +1,17 @@
 extends Node2D
 
 
-@onready var ball_scene := load("res://ball/ball.tscn")
-@onready var deflector := $"../deflector"
-
 var list_of_balls: Dictionary = {}
+
+const ball_scene := preload("res://ball/ball.tscn")
+
+@onready var deflector := $"../deflector"
 
 
 func _ready():
 	var _new_ball = ball_scene.instantiate()
+	_new_ball.position = Vector2(64, 64)
 	add_child(_new_ball)
-	#var _new_ball = ball_scene.instantiate() #Ball.new(0, true)  #
-	#add_child(_new_ball)
 
 
 func _process(_delta):
