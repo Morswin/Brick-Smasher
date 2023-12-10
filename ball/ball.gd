@@ -24,7 +24,7 @@ func _ready():
 
 func _physics_process(_delta):
 	if attached:
-		pass
+		position = get_parent().deflector.ball_holder.global_position
 	else:
 		if is_on_ceiling():
 			direction.y = direction.y * -1
