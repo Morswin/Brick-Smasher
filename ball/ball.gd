@@ -30,7 +30,22 @@ func _physics_process(_delta):
 	move_and_slide()
 
 
-func bounce_off():
+func remove_or_return(_reattach: bool = false):
+	if _reattach:
+		attached = true
+	return ID
+
+
+func bounce_off(_brick_pos: Vector2, _brick_size: Vector2):
+	print(_brick_pos, _brick_size)
+	var _brick_edge_top: int = _brick_pos.y - (_brick_size.y / 2)
+	var _brick_edge_bottom: int = _brick_pos.y + (_brick_size.y / 2)
+	var _brick_edge_left: int = _brick_pos.x - (_brick_size.x / 2)
+	var _brick_edge_right: int = _brick_pos.x + (_brick_size.x / 2)
+	print(_brick_edge_top)
+	print(_brick_edge_bottom)
+	print(_brick_edge_left)
+	print(_brick_edge_right)
 	if direction.angle() <= PI/4 and direction.angle() >= -PI/4:
 		# Ball is moving right
 		direction.x = -abs(direction.x)
