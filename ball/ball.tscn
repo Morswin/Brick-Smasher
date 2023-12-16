@@ -16,3 +16,21 @@ shape = SubResource("RectangleShape2D_ov02a")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("2_2nhk2")
+
+[node name="ray_casts" type="Node2D" parent="."]
+
+[node name="ray_up" type="RayCast2D" parent="ray_casts"]
+position = Vector2(0, -8)
+target_position = Vector2(0, -2)
+
+[node name="ray_left" type="RayCast2D" parent="ray_casts"]
+position = Vector2(-8, 0)
+target_position = Vector2(-2, 0)
+
+[node name="ray_right" type="RayCast2D" parent="ray_casts"]
+position = Vector2(8, 0)
+target_position = Vector2(2, 0)
+
+[node name="ray_down" type="RayCast2D" parent="ray_casts"]
+position = Vector2(0, 8)
+target_position = Vector2(0, 2)

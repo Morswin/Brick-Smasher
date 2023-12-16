@@ -3,6 +3,10 @@ class_name Ball
 
 
 @onready var sprite := $DefaulBall
+@onready var ray_up := $ray_casts/ray_up
+@onready var ray_left := $ray_casts/ray_left
+@onready var ray_right := $ray_casts/ray_right
+@onready var ray_down := $ray_casts/ray_down
 
 const SPEED = 150
 
@@ -17,6 +21,14 @@ func _ready():
 
 
 func _physics_process(_delta):
+	if ray_down.get_collider():
+		print("down")
+	if ray_left.get_collider():
+		print("left")
+	if ray_right.get_collider():
+		print("right")
+	if ray_up.get_collider():
+		print("up")
 	if attached:
 		position = get_parent().deflector.ball_holder.global_position
 		if Input.is_action_just_pressed("ui_accept"):
