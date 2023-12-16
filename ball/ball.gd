@@ -39,44 +39,71 @@ func remove_or_return(_reattach: bool = false):
 
 
 func bounce_off(_brick_pos: Vector2, _brick_size: Vector2):
-	#print(_brick_pos, _brick_size)
-	var _brick_edge_top: int = (_brick_pos.y - (_brick_size.y / 2)) as int
-	var _brick_edge_bottom: int =( _brick_pos.y + (_brick_size.y / 2)) as int
-	var _brick_edge_left: int = (_brick_pos.x - (_brick_size.x / 2)) as int
-	var _brick_edge_right: int = (_brick_pos.x + (_brick_size.x / 2)) as int
-	#print(_brick_edge_top)
-	#print(_brick_edge_bottom)
-	#print(_brick_edge_left)
-	#print(_brick_edge_right)
+	# Calculate Ball's size
 	var _ball_size := Vector2(
 		sprite.get_rect().size.x * sprite.scale.x,
 		sprite.get_rect().size.y * sprite.scale.y
 	)
-	var _ball_edge_top: int = (global_position.y - (_ball_size.y / 2)) as int
-	var _ball_edge_bottom: int = (global_position.y + (_ball_size.y / 2)) as int
-	var _ball_edge_left: int = (global_position.x - (_ball_size.x / 2)) as int
-	var _ball_edge_right: int = (global_position.x + (_ball_size.x / 2)) as int
 	if direction.angle() <= PI/4 and direction.angle() >= -PI/4:
 		# Ball is moving right
+		# Calculating edges
+		var _brick_edge_top: int = (_brick_pos.y - (_brick_size.y / 2)) as int
+		var _brick_edge_bottom: int =( _brick_pos.y + (_brick_size.y / 2)) as int
+		var _ball_edge_top: int = (global_position.y - (_ball_size.y / 2)) as int
+		var _ball_edge_bottom: int = (global_position.y + (_ball_size.y / 2)) as int
 		# Ball is between brick's edges
+		var _condition_1: bool = (_ball_edge_top >= _brick_edge_top) and (_ball_edge_bottom <= _brick_edge_bottom)
 		# Ball is still below brick's upper edge
+		var _condition_2: bool = (_ball_edge_bottom >= _brick_edge_top)
 		# Ball is still above brick's lower edge
-		direction.x = -abs(direction.x)
+		var _condition_3: bool = (_ball_edge_top <= _brick_edge_bottom)
+		if _condition_1 or _condition_2 or _condition_3:
+			direction.x = -abs(direction.x)
 	elif direction.angle() <= -PI/4 and direction.angle() > -(PI/4)*3:
+		print("Reflect after up")
 		# Ball is moving up
+		# Calculating edges
+		var _brick_edge_left: int = (_brick_pos.x - (_brick_size.x / 2)) as int
+		var _brick_edge_right: int = (_brick_pos.x + (_brick_size.x / 2)) as int
+		var _ball_edge_left: int = (global_position.x - (_ball_size.x / 2)) as int
+		var _ball_edge_right: int = (global_position.x + (_ball_size.x / 2)) as int
 		# Ball is between brick's edges
+		var _condition_1: bool = (_ball_edge_left >= _brick_edge_left) and (_ball_edge_right <= _brick_edge_right)
 		# Ball touches brick's left edge
+		var _condition_2: bool = (_ball_edge_right >= _brick_edge_left)
 		# Ball touches brick's right edge 
-		direction.y = abs(direction.y)
+		var _condition_3: bool = (_ball_edge_left <= _brick_edge_right)
+		if _condition_1 or _condition_2 or _condition_3:
+			direction.y = abs(direction.y)
 	elif direction.angle() >= PI/4 and direction.angle() < (PI/4)*3:
+		print("Reflect after down")
 		# Ball is moving down
+		# Calculating edges
+		var _brick_edge_left: int = (_brick_pos.x - (_brick_size.x / 2)) as int
+		var _brick_edge_right: int = (_brick_pos.x + (_brick_size.x / 2)) as int
+		var _ball_edge_left: int = (global_position.x - (_ball_size.x / 2)) as int
+		var _ball_edge_right: int = (global_position.x + (_ball_size.x / 2)) as int
 		# Ball is between brick's edges
+		var _condition_1: bool = (_ball_edge_left >= _brick_edge_left) and (_ball_edge_right <= _brick_edge_right)
 		# Ball touches brick's left edge
+		var _condition_2: bool = (_ball_edge_right >= _brick_edge_left)
 		# Ball touches brick's right edge 
-		direction.y = -abs(direction.y)
+		var _condition_3: bool = (_ball_edge_left <= _brick_edge_right)
+		if _condition_1 or _condition_2 or _condition_3:
+			direction.y = -abs(direction.y)
 	else:
+		print("Reflect after left")
 		# Ball is moving left
+		# Calculating edges
+		var _brick_edge_top: int = (_brick_pos.y - (_brick_size.y / 2)) as int
+		var _brick_edge_bottom: int =( _brick_pos.y + (_brick_size.y / 2)) as int
+		var _ball_edge_top: int = (global_position.y - (_ball_size.y / 2)) as int
+		var _ball_edge_bottom: int = (global_position.y + (_ball_size.y / 2)) as int
 		# Ball is between brick's edges
+		var _condition_1: bool = (_ball_edge_top >= _brick_edge_top) and (_ball_edge_bottom <= _brick_edge_bottom)
 		# Ball is still below brick's upper edge
+		var _condition_2: bool = (_ball_edge_bottom >= _brick_edge_top)
 		# Ball is still above brick's lower edge
-		direction.x = abs(direction.x)
+		var _condition_3: bool = (_ball_edge_top <= _brick_edge_bottom)
+		if _condition_1 or _condition_2 or _condition_3:
+			direction.x = abs(direction.x)
