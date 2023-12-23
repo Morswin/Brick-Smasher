@@ -22,21 +22,41 @@ texture = ExtResource("2_2nhk2")
 [node name="ray_casts" type="Node2D" parent="."]
 
 [node name="ray_up" type="RayCast2D" parent="ray_casts"]
-position = Vector2(0, -8)
-target_position = Vector2(0, -2)
+position = Vector2(-8, -8)
+target_position = Vector2(0, -1)
+collision_mask = 2
+
+[node name="ray_up2" type="RayCast2D" parent="ray_casts"]
+position = Vector2(8, -8)
+target_position = Vector2(0, -1)
 collision_mask = 2
 
 [node name="ray_left" type="RayCast2D" parent="ray_casts"]
-position = Vector2(-8, 0)
-target_position = Vector2(-2, 0)
+position = Vector2(-8, -8)
+target_position = Vector2(-1, 0)
+collision_mask = 2
+
+[node name="ray_left2" type="RayCast2D" parent="ray_casts"]
+position = Vector2(-8, 8)
+target_position = Vector2(-1, 0)
 collision_mask = 2
 
 [node name="ray_right" type="RayCast2D" parent="ray_casts"]
-position = Vector2(8, 0)
-target_position = Vector2(2, 0)
+position = Vector2(8, -8)
+target_position = Vector2(1, 0)
+collision_mask = 2
+
+[node name="ray_right2" type="RayCast2D" parent="ray_casts"]
+position = Vector2(8, 8)
+target_position = Vector2(1, 0)
 collision_mask = 2
 
 [node name="ray_down" type="RayCast2D" parent="ray_casts"]
-position = Vector2(0, 8)
-target_position = Vector2(0, 2)
+position = Vector2(-8, 8)
+target_position = Vector2(0, 1)
+collision_mask = 2
+
+[node name="ray_down2" type="RayCast2D" parent="ray_casts"]
+position = Vector2(8, 8)
+target_position = Vector2(0, 1)
 collision_mask = 2

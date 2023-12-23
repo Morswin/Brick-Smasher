@@ -4,9 +4,13 @@ class_name Ball
 
 @onready var sprite := $DefaulBall
 @onready var ray_up := $ray_casts/ray_up
+@onready var ray_up_2 := $ray_casts/ray_up2
 @onready var ray_left := $ray_casts/ray_left
+@onready var ray_left_2 := $ray_casts/ray_left2
 @onready var ray_right := $ray_casts/ray_right
+@onready var ray_right_2 := $ray_casts/ray_right2
 @onready var ray_down := $ray_casts/ray_down
+@onready var ray_down_2 := $ray_casts/ray_down2
 
 const SPEED = 150
 
@@ -22,21 +26,30 @@ func _ready():
 
 func _physics_process(_delta):
 	var _down_col = ray_down.get_collider()
+	var _down_col_2 = ray_down_2.get_collider()
 	if _down_col:
-		print(_down_col)
 		_down_col.lower_endurance()
+	elif _down_col_2:
+		_down_col_2.lower_endurance()
 	var _left_col = ray_left.get_collider()
+	var _left_col_2 = ray_left_2.get_collider()
 	if _left_col:
-		print(_left_col)
 		_left_col.lower_endurance()
+	elif _left_col_2:
+		_left_col_2.lower_endurance()
 	var _right_col = ray_right.get_collider()
+	var _right_col_2 = ray_right_2.get_collider()
 	if _right_col:
-		print(_right_col)
 		_right_col.lower_endurance()
+	elif _right_col_2:
+		_right_col_2.lower_endurance()
 	var _up_col = ray_up.get_collider()
+	var _up_col_2 = ray_up_2.get_collider()
 	if _up_col:
-		print(_up_col)
 		_up_col.lower_endurance()
+	elif _up_col_2:
+		_up_col_2.lower_endurance()
+	
 	if attached:
 		position = get_parent().deflector.ball_holder.global_position
 		if Input.is_action_just_pressed("ui_accept"):
