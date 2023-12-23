@@ -1,17 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbb48vxjrl16r"]
+[gd_scene load_steps=6 format=3 uid="uid://dbb48vxjrl16r"]
 
 [ext_resource type="PackedScene" uid="uid://cpkvgqw024kep" path="res://deflector/deflector.tscn" id="1_t2grt"]
 [ext_resource type="Script" path="res://ball/ball_manager.gd" id="2_80387"]
 [ext_resource type="PackedScene" uid="uid://bh8spe44886s6" path="res://edge/edge.tscn" id="3_q17ps"]
 [ext_resource type="PackedScene" uid="uid://bxdioxecoupv5" path="res://brick/brick.tscn" id="4_x0iog"]
-[ext_resource type="PackedScene" uid="uid://jdpoenn4h3sd" path="res://ball/ball.tscn" id="5_qmixb"]
-[ext_resource type="Texture2D" uid="uid://dvkhj27nas5nq" path="res://icon.svg" id="6_7anl6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5v41o"]
 size = Vector2(1088, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nh6qa"]
-size = Vector2(126, 128)
 
 [node name="game loop" type="Node2D"]
 
@@ -282,21 +277,5 @@ position = Vector2(219, 168)
 
 [node name="brick6" parent="bricks" instance=ExtResource("4_x0iog")]
 position = Vector2(799, 334)
-
-[node name="ball2" parent="." instance=ExtResource("5_qmixb")]
-position = Vector2(505, 193)
-direction = Vector2(-1, -0.75)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-visible = false
-position = Vector2(528, 380)
-
-[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("6_7anl6")
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_nh6qa")
-metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="ball_catcher" to="ball manager" method="_on_ball_catcher_body_entered"]

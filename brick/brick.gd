@@ -13,4 +13,4 @@ func lower_endurance():
 		destory_self()
 
 func destory_self():
-	pass
+	queue_free()
