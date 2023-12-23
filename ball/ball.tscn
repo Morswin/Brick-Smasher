@@ -60,3 +60,13 @@ collision_mask = 2
 position = Vector2(8, 8)
 target_position = Vector2(0, 1)
 collision_mask = 2
+
+[node name="ray_down_deflector" type="RayCast2D" parent="ray_casts"]
+position = Vector2(-8, 8)
+target_position = Vector2(0, 1)
+collision_mask = 8
+
+[node name="ray_down_deflector2" type="RayCast2D" parent="ray_casts"]
+position = Vector2(8, 8)
+target_position = Vector2(0, 1)
+collision_mask = 8

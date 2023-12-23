@@ -11,6 +11,8 @@ class_name Ball
 @onready var ray_right_2 := $ray_casts/ray_right2
 @onready var ray_down := $ray_casts/ray_down
 @onready var ray_down_2 := $ray_casts/ray_down2
+@onready var ray_down_deflector := $ray_casts/ray_down_deflector
+@onready var ray_down_deflector_2 := $ray_casts/ray_down_deflector2
 
 const SPEED = 150
 
@@ -60,12 +62,25 @@ func _physics_process(_delta):
 		if is_on_wall():
 			direction.x = direction.x * -1
 		if is_on_floor():
-			direction.y = direction.y * -1
+			var _def_col = ray_down_deflector.get_collider()
+			var _def_col_2 = ray_down_deflector_2.get_collider()
+			if _def_col:
+				direction = deflector_change_angle(_def_col)
+			elif _def_col_2:
+				direction = deflector_change_angle(_def_col_2)
+			direction.y = -abs(direction.y)
 		velocity = direction * SPEED 
 	move_and_slide()
 
 
 func remove_or_return(_reattach: bool = false):
+	# TODO Add part about deleting the ball if there are more then 1 on the board.
 	if _reattach:
 		attached = true
 	return ID
+
+
+func deflector_change_angle(_deflector) -> Vector2:
+	var _angle: float = _deflector.get_deflection_angle(global_position)
+	var _new_direction: Vector2 = Vector2(cos(_angle), sin(_angle))
+	return _new_direction
