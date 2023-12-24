@@ -15,6 +15,11 @@ run/main_scene="res://main menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LifeManager="*res://singletons/life_manager.gd"
+ScoreManager="*res://singletons/score_manager.gd"
+
 [layer_names]
 
 2d_physics/layer_1="Edge"

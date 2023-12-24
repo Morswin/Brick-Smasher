@@ -14,7 +14,7 @@ class_name Ball
 @onready var ray_down_deflector := $ray_casts/ray_down_deflector
 @onready var ray_down_deflector_2 := $ray_casts/ray_down_deflector2
 
-const SPEED = 150
+const SPEED = 250
 
 var ID: int
 
