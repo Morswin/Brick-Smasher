@@ -18,6 +18,8 @@ position = Vector2(582, 623)
 script = ExtResource("2_80387")
 
 [node name="ball catcher" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ball catcher"]
 position = Vector2(576, 656)

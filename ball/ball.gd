@@ -76,6 +76,7 @@ func _physics_process(_delta):
 func remove_or_return(_reattach: bool = false):
 	# TODO Add part about deleting the ball if there are more then 1 on the board.
 	if _reattach:
+		LifeManager.decrease_life_count()
 		attached = true
 	return ID
 
