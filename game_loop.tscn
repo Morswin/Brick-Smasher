@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbb48vxjrl16r"]
+[gd_scene load_steps=6 format=3 uid="uid://dbb48vxjrl16r"]
 
 [ext_resource type="PackedScene" uid="uid://cpkvgqw024kep" path="res://deflector/deflector.tscn" id="1_t2grt"]
 [ext_resource type="Script" path="res://ball/ball_manager.gd" id="2_80387"]
 [ext_resource type="PackedScene" uid="uid://bh8spe44886s6" path="res://edge/edge.tscn" id="3_q17ps"]
 [ext_resource type="Script" path="res://brick/bricks.gd" id="4_7ceql"]
-[ext_resource type="PackedScene" uid="uid://bxdioxecoupv5" path="res://brick/brick.tscn" id="4_x0iog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5v41o"]
 size = Vector2(1088, 32)
@@ -24,6 +23,9 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ball catcher"]
 position = Vector2(576, 656)
 shape = SubResource("RectangleShape2D_5v41o")
+
+[node name="bricks" type="Node2D" parent="."]
+script = ExtResource("4_7ceql")
 
 [node name="edges" type="Node2D" parent="."]
 
@@ -260,107 +262,5 @@ position = Vector2(1136, 624)
 
 [node name="edge56" parent="edges/edge right" instance=ExtResource("3_q17ps")]
 position = Vector2(1136, 656)
-
-[node name="bricks" type="Node2D" parent="."]
-script = ExtResource("4_7ceql")
-
-[node name="brick" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(256, 48)
-
-[node name="brick2" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(192, 48)
-
-[node name="brick3" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(320, 48)
-
-[node name="brick4" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(128, 48)
-
-[node name="brick5" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(64, 48)
-
-[node name="brick6" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(384, 48)
-
-[node name="brick25" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(960, 48)
-
-[node name="brick26" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(896, 48)
-
-[node name="brick27" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(1024, 48)
-
-[node name="brick28" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(832, 48)
-
-[node name="brick29" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(1088, 48)
-
-[node name="brick7" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(640, 48)
-
-[node name="brick8" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(576, 48)
-
-[node name="brick9" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(704, 48)
-
-[node name="brick10" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(512, 48)
-
-[node name="brick11" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(448, 48)
-
-[node name="brick12" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(768, 48)
-
-[node name="brick13" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(288, 80)
-
-[node name="brick14" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(224, 80)
-
-[node name="brick15" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(352, 80)
-
-[node name="brick16" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(160, 80)
-
-[node name="brick17" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(96, 80)
-
-[node name="brick18" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(416, 80)
-
-[node name="brick30" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(992, 80)
-
-[node name="brick31" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(928, 80)
-
-[node name="brick32" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(1056, 80)
-
-[node name="brick33" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(864, 80)
-
-[node name="brick19" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(672, 80)
-
-[node name="brick20" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(608, 80)
-
-[node name="brick21" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(736, 80)
-
-[node name="brick22" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(544, 80)
-
-[node name="brick23" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(480, 80)
-
-[node name="brick24" parent="bricks" instance=ExtResource("4_x0iog")]
-position = Vector2(800, 80)
 
 [connection signal="body_entered" from="ball catcher" to="ball manager" method="_on_ball_catcher_body_entered"]
