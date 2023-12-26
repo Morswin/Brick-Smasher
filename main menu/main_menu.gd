@@ -6,6 +6,7 @@ var game_loop := preload("res://game_loop.tscn")
 
 func _on_start_pressed():
 	LifeManager.reset_life_count()
+	ScoreManager.reset_score()
 	get_tree().change_scene_to_packed(game_loop)
 
 

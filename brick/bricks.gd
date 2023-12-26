@@ -11,7 +11,7 @@ func _ready():
 	var _new_birck_row = brick_row_scene.instantiate()
 	_new_birck_row.position.y = 48
 	_new_birck_row.add_brick(0)
-	_new_birck_row.add_brick(1)
+	_new_birck_row.add_brick(2)
 	_new_birck_row.add_brick(16)
 	_new_birck_row.add_brick(32)
 	add_child(_new_birck_row)

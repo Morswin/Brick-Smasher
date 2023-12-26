@@ -3,6 +3,7 @@ class_name Brick
 
 
 @export var endurace: int = 1
+@export var value: int = 100
 
 @onready var sprite := $RedBrick
 
@@ -13,4 +14,5 @@ func lower_endurance():
 		destory_self()
 
 func destory_self():
+	ScoreManager.add_score(value)
 	queue_free()
