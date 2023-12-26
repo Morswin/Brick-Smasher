@@ -43,7 +43,6 @@ func get_next_brick_ID():
 
 func any_bricks_remaining() -> bool:
 	# True if any brick is still not freed from the queue
-	print("It gets called")
 	var _any := false
 	for key in brick_dict.keys():
 		var _weak_ref = weakref(brick_dict[key])

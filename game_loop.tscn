@@ -29,6 +29,8 @@ shape = SubResource("RectangleShape2D_5v41o")
 script = ExtResource("4_7ceql")
 
 [node name="brick spawn timer" type="Timer" parent="bricks"]
+wait_time = 8.0
+autostart = true
 script = ExtResource("4_0qr0r")
 
 [node name="edges" type="Node2D" parent="."]
@@ -277,3 +279,4 @@ text = "Score:"
 horizontal_alignment = 2
 
 [connection signal="body_entered" from="ball catcher" to="ball manager" method="_on_ball_catcher_body_entered"]
+[connection signal="timeout" from="bricks/brick spawn timer" to="bricks" method="_on_brick_spawn_timer_timeout"]
