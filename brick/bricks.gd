@@ -12,6 +12,7 @@ var next_id = 0
 func _ready():
 	add_row()  # The second, already present but hidden row
 	add_row(48)  # The first visible row
+	BrickSharedData.current_rows = 2
 
 func add_row(start_y: int = 16):
 	rng.randomize()
@@ -27,6 +28,7 @@ func add_row(start_y: int = 16):
 	_new_brick_row.ID = get_next_row_ID()
 	add_child(_new_brick_row)
 	rows[_new_brick_row.ID] = _new_brick_row
+	BrickSharedData.current_rows += 1
 
 func get_next_row_ID():
 	# The only intended way for getting the next ID
@@ -35,5 +37,6 @@ func get_next_row_ID():
 
 
 func _on_brick_spawn_timer_timeout():
-	print("new row")
-	add_row()
+	if BrickSharedData.advance_or_wait():
+		print("new row")
+		add_row()

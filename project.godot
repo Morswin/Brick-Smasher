@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LifeManager="*res://singletons/life_manager.gd"
 ScoreManager="*res://singletons/score_manager.gd"
+BrickSharedData="*res://singletons/brick_shared_data.gd"
 
 [layer_names]
 
