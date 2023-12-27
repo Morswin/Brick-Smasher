@@ -1,6 +1,6 @@
 # Build files
-build/linux/
-build/windows/
+builds/linux/
+builds/windows/
 
 # Godot 4+ specific ignores
 .godot/
