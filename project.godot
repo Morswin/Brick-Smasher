@@ -21,6 +21,11 @@ LifeManager="*res://singletons/life_manager.gd"
 ScoreManager="*res://singletons/score_manager.gd"
 BrickSharedData="*res://singletons/brick_shared_data.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [layer_names]
 
 2d_physics/layer_1="Edge"
