@@ -10,11 +10,11 @@ var next_id = 0
 
 
 func _ready():
-	add_row()  # The second, already present but hidden row
+	add_row(16)  # The second, already present but hidden row
 	add_row(48)  # The first visible row
 	BrickSharedData.current_rows = 2
 
-func add_row(start_y: int = 16):
+func add_row(start_y: int = -16):
 	rng.randomize()
 	var _new_brick_row = brick_row_scene.instantiate()
 	_new_brick_row.position.y = start_y  # It will be hidden at the start under the upper edge
