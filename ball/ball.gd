@@ -56,11 +56,14 @@ func _physics_process(_delta):
 		position = get_parent().deflector.ball_holder.global_position
 		if Input.is_action_just_pressed("ui_accept"):
 			attached = false
+			SoundManager.play_sound(SoundPreload.SFX_DEFLECTION_BOUNCE_OFF)
 	else:
 		if is_on_ceiling():
 			direction.y = direction.y * -1
+			SoundManager.play_sound(SoundPreload.SFX_EDGE_BOUNCE_OFF)
 		if is_on_wall():
 			direction.x = direction.x * -1
+			SoundManager.play_sound(SoundPreload.SFX_EDGE_BOUNCE_OFF)
 		if is_on_floor():
 			var _def_col = ray_down_deflector.get_collider()
 			var _def_col_2 = ray_down_deflector_2.get_collider()
@@ -69,6 +72,7 @@ func _physics_process(_delta):
 			elif _def_col_2:
 				direction = deflector_change_angle(_def_col_2)
 			direction.y = -abs(direction.y)
+			SoundManager.play_sound(SoundPreload.SFX_DEFLECTION_BOUNCE_OFF)
 		velocity = direction * SPEED 
 	move_and_slide()
 

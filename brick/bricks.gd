@@ -8,11 +8,19 @@ var rng = RandomNumberGenerator.new()
 var rows = {}  # in case of need to filter over them
 var next_id = 0
 
+# Used for tracking whether to play lvl up sound
+@onready var previous_lvl = BrickSharedData.get_difficulty()  
+
 
 func _ready():
 	add_row(16)  # The second, already present but hidden row
 	add_row(48)  # The first visible row
 	BrickSharedData.current_rows = 2
+
+func _process(_delta):
+	if BrickSharedData.get_difficulty() != previous_lvl:
+		SoundManager.play_sound(SoundPreload.SFX_LEVEL_UP)
+		previous_lvl = BrickSharedData.get_difficulty()
 
 func add_row(start_y: int = -16):
 	rng.randomize()
@@ -34,7 +42,6 @@ func get_next_row_ID():
 	# The only intended way for getting the next ID
 	next_id += 1
 	return next_id - 1
-
 
 func _on_brick_spawn_timer_timeout():
 	if BrickSharedData.advance_or_wait():

@@ -21,11 +21,17 @@ config/icon="res://icon.svg"
 LifeManager="*res://singletons/life_manager.gd"
 ScoreManager="*res://singletons/score_manager.gd"
 BrickSharedData="*res://singletons/brick_shared_data.gd"
+SoundManager="*res://addons/sound_manager/sound_manager.gd"
+SoundPreload="*res://singletons/sound_preload.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/sound_manager/plugin.cfg")
 
 [layer_names]
 

@@ -25,6 +25,7 @@ func _process(delta):
 	if !any_bricks_remaining():
 		#print("Deleting a row because it's empty")
 		BrickSharedData.current_rows -= 1
+		SoundManager.play_sound(SoundPreload.SFX_LINE_CLEARED)
 		queue_free()
 
 func add_brick(_x: int) -> void:
