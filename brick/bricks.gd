@@ -39,3 +39,6 @@ func get_next_row_ID():
 func _on_brick_spawn_timer_timeout():
 	if BrickSharedData.advance_or_wait():
 		add_row()
+		for key in rows.keys():
+			if is_instance_valid(rows[key]):
+				rows[key].start_lowering()

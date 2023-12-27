@@ -13,11 +13,14 @@ var center = 576  # This is where brick row's x should be set up to
 var ID = null
 var next_brick_ID = 0
 var brick_dict = {}
+var is_lowering: bool = false
+
+@onready var timer := $lowering_timer
 
 
 func _process(delta):
 	# It maight be better to limit how ofthen this checks, in case of performence issues
-	if BrickSharedData.advance_or_wait():
+	if is_lowering:
 		position.y += falling_speed * delta
 	if !any_bricks_remaining():
 		#print("Deleting a row because it's empty")
@@ -50,3 +53,10 @@ func any_bricks_remaining() -> bool:
 		if is_instance_valid(brick_dict[key]):
 			_any = true
 	return _any
+
+func start_lowering():
+	is_lowering = true
+	timer.start()
+
+func _on_lowering_timer_timeout():
+	is_lowering = false
