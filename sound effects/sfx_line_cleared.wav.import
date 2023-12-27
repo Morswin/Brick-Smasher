@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ck7ss6amjh8t8"
+path="res://.godot/imported/sfx_line_cleared.wav-dc5a5a9ca416c0befd8e63a86c7998f8.sample"
+
+[deps]
+
+source_file="res://sound effects/sfx_line_cleared.wav"
+dest_files=["res://.godot/imported/sfx_line_cleared.wav-dc5a5a9ca416c0befd8e63a86c7998f8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpa3tmtaw1y76"
+path="res://.godot/imported/sfx_brick_lower_endurance.wav-2f095f9c05570cc09f6504e15238c624.sample"
+
+[deps]
+
+source_file="res://sound effects/sfx_brick_lower_endurance.wav"
+dest_files=["res://.godot/imported/sfx_brick_lower_endurance.wav-2f095f9c05570cc09f6504e15238c624.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
