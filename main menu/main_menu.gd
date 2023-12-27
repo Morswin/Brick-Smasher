@@ -2,6 +2,7 @@ extends Control
 
 
 var game_loop := preload("res://game_loop.tscn")
+var options_menu := preload("res://options menu/options.tscn")
 
 
 func _on_start_pressed():
@@ -11,8 +12,7 @@ func _on_start_pressed():
 
 
 func _on_options_pressed():
-	# TODO implement options menu
-	print("Not implemented yet")
+	get_tree().change_scene_to_packed(options_menu)
 
 
 func _on_exit_pressed():
