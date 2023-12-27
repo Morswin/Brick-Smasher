@@ -20,7 +20,7 @@ func _process(delta):
 	if BrickSharedData.advance_or_wait():
 		position.y += falling_speed * delta
 	if !any_bricks_remaining():
-		print("Deleting a row because it's empty")
+		#print("Deleting a row because it's empty")
 		BrickSharedData.current_rows -= 1
 		queue_free()
 
@@ -47,11 +47,6 @@ func any_bricks_remaining() -> bool:
 	# True if any brick is still not freed from the queue
 	var _any := false
 	for key in brick_dict.keys():
-		#var _weak_ref = weakref(brick_dict[key])
-		#print(key, brick_dict[key], _weak_ref)
-		#print(is_instance_valid(brick_dict[key]))
-		#if _weak_ref.get_ref():
 		if is_instance_valid(brick_dict[key]):
-			#print("TRUE!")
 			_any = true
 	return _any

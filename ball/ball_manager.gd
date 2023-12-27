@@ -20,6 +20,5 @@ func _ready():
 
 
 func _on_ball_catcher_body_entered(body):
-	print(body)
 	if body.is_in_group("Balls"):
 		var _id = body.remove_or_return(len(ball_dict.keys()) <= 1)

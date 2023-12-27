@@ -17,4 +17,3 @@ func set_score_label(label):
 
 func add_score(_amount: int):
 	current_score += _amount
-	print("current score ", current_score)

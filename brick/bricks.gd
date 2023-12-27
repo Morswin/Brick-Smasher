@@ -38,5 +38,4 @@ func get_next_row_ID():
 
 func _on_brick_spawn_timer_timeout():
 	if BrickSharedData.advance_or_wait():
-		print("new row")
 		add_row()
