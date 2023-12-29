@@ -16,8 +16,6 @@ class_name Ball
 
 const SPEED = 250
 
-var ID: int
-
 @export var direction := Vector2(1, -0.75)
 @export var attached := false  # Is this ball attached to the deflector?
 
@@ -82,7 +80,6 @@ func remove_or_return(_reattach: bool = false):
 	if _reattach:
 		LifeManager.decrease_life_count()
 		attached = true
-	return ID
 
 
 func deflector_change_angle(_deflector) -> Vector2:

@@ -5,8 +5,7 @@ class_name BrickRowManager
 const brick_row_scene = preload("res://brick/brick_row.tscn")
 
 var rng = RandomNumberGenerator.new()
-var rows = {}  # in case of need to filter over them
-var next_id = 0
+var rows := []  # in case of need to filter over them
 
 # Used for tracking whether to play lvl up sound
 @onready var previous_lvl = BrickSharedData.get_difficulty()  
@@ -33,19 +32,14 @@ func add_row(start_y: int = -16):
 		elif rng.randi() % 2 == 0:
 			_new_brick_row.add_brick(_brick_x_pos)
 			_space_needed = true
-	_new_brick_row.ID = get_next_row_ID()
+	
 	add_child(_new_brick_row)
-	rows[_new_brick_row.ID] = _new_brick_row
+	rows.append(_new_brick_row)
 	BrickSharedData.current_rows += 1
-
-func get_next_row_ID():
-	# The only intended way for getting the next ID
-	next_id += 1
-	return next_id - 1
 
 func _on_brick_spawn_timer_timeout():
 	if BrickSharedData.advance_or_wait():
 		add_row()
-		for key in rows.keys():
-			if is_instance_valid(rows[key]):
-				rows[key].start_lowering()
+		for _row in rows:
+			if is_instance_valid(_row):
+				_row.start_lowering()

@@ -20,6 +20,5 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 
-
 func get_deflection_angle(_ball_pos: Vector2) -> float:
 	return center_marker.get_angle_to(_ball_pos)

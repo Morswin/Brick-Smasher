@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbb48vxjrl16r"]
+[gd_scene load_steps=8 format=3 uid="uid://dbb48vxjrl16r"]
 
 [ext_resource type="PackedScene" uid="uid://cpkvgqw024kep" path="res://deflector/deflector.tscn" id="1_t2grt"]
 [ext_resource type="Script" path="res://ball/ball_manager.gd" id="2_80387"]
 [ext_resource type="PackedScene" uid="uid://bh8spe44886s6" path="res://edge/edge.tscn" id="3_q17ps"]
-[ext_resource type="Script" path="res://brick/brick spawn timer.gd" id="4_0qr0r"]
 [ext_resource type="Script" path="res://brick/bricks.gd" id="4_7ceql"]
 [ext_resource type="Script" path="res://life display.gd" id="6_n86sv"]
 [ext_resource type="Texture2D" uid="uid://b2g8kh1614l72" path="res://graphics/life/life_empty.png" id="7_dhtow"]
@@ -33,7 +32,6 @@ script = ExtResource("4_7ceql")
 [node name="brick spawn timer" type="Timer" parent="bricks"]
 wait_time = 8.0
 autostart = true
-script = ExtResource("4_0qr0r")
 
 [node name="edges" type="Node2D" parent="."]
 

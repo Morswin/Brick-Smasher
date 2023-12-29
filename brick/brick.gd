@@ -5,8 +5,6 @@ class_name Brick
 @export var endurace: int = 1
 @export var value: int = 100
 
-var ID = null
-
 @onready var sprite := $RedBrick
 
 

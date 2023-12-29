@@ -9,11 +9,8 @@ class_name BrickRow
 
 const brick_scene = preload("res://brick/brick.tscn")
 
-var center = 576  # This is where brick row's x should be set up to
-var ID = null
-var next_brick_ID = 0
-var brick_dict = {}
-var is_lowering: bool = false
+var brick_list := []
+var is_lowering := false
 
 @onready var timer := $lowering_timer
 
@@ -37,21 +34,17 @@ func add_brick(_x: int) -> void:
 		_brick_pos = pos_last
 	else:
 		_brick_pos = (_x * pos_change) + pos_first
+	
 	var _new_brick = brick_scene.instantiate()
 	_new_brick.position.x = _brick_pos
-	_new_brick.ID = get_next_brick_ID()
 	add_child(_new_brick)
-	brick_dict[_new_brick.ID] = _new_brick
-
-func get_next_brick_ID():
-	next_brick_ID += 1
-	return next_brick_ID - 1
+	brick_list.append(_new_brick)
 
 func any_bricks_remaining() -> bool:
 	# True if any brick is still not freed from the queue
 	var _any := false
-	for key in brick_dict.keys():
-		if is_instance_valid(brick_dict[key]):
+	for _brick in brick_list:
+		if is_instance_valid(_brick):
 			_any = true
 	return _any
 

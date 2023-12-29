@@ -9,7 +9,6 @@ var current_lifes: int = 3
 func reset_life_count():
 	current_lifes = starting_lifes
 
-
 func decrease_life_count():
 	current_lifes -= 1
 	SoundManager.play_sound(SoundPreload.SFX_LIFE_LOST)
