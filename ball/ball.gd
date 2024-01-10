@@ -54,6 +54,7 @@ func _physics_process(_delta):
 		position = get_parent().deflector.ball_holder.global_position
 		if Input.is_action_just_pressed("ui_accept"):
 			attached = false
+			direction = Vector2.UP
 			SoundManager.play_sound(SoundPreload.SFX_DEFLECTION_BOUNCE_OFF)
 	else:
 		if is_on_ceiling():
