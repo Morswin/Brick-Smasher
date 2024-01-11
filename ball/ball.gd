@@ -14,7 +14,9 @@ class_name Ball
 @onready var ray_down_deflector := $ray_casts/ray_down_deflector
 @onready var ray_down_deflector_2 := $ray_casts/ray_down_deflector2
 
-const SPEED = 250
+var SPEED :
+	get:
+		return 250 + 50 * (BrickSharedData.get_difficulty() - 1 - (LifeManager.current_lifes - 3))
 
 @export var direction := Vector2(1, -0.75)
 @export var attached := false  # Is this ball attached to the deflector?
